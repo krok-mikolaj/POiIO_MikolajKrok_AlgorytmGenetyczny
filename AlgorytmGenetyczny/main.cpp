@@ -21,5 +21,8 @@ int main()
 	pop.info();
 	cout << "\n\n";
 
+	cout << "Najlepszy osobnik:\n";
+	pop.get_best_candidate().info();
+
 	return 0;
 }
