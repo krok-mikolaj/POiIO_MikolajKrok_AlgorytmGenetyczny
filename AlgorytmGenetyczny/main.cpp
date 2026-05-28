@@ -2,7 +2,7 @@
 #include <cstdlib> // srand
 #include <time.h>
 
-#include "TPopulation.h"
+#include "TAlgorithm.h"
 
 using namespace std;
 
@@ -10,19 +10,14 @@ int main()
 {
 	srand(time(0));
 
-	TPopulation pop(10);
-	
-	cout << "Zaraz po utworzeniu obiektu klasy TPopulation";
-	pop.info();
-	cout << "\n\n";
+	unsigned int candidates_count = 5;
+	unsigned int max_population_count = 20;
+	unsigned int min_improvment_proc = 2;
 
-	cout << "Po wykonanych obliczeniach";
-	pop.calculate();
-	pop.info();
-	cout << "\n\n";
-
-	cout << "Najlepszy ";
-	pop.get_best_candidate().info();
+	TAlgorithm task{ candidates_count,
+		max_population_count,
+		min_improvment_proc };
+	task.run();
 
 	return 0;
 }
